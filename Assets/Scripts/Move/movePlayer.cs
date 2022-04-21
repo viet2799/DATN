@@ -88,6 +88,18 @@ public class movePlayer : MonoBehaviour
             {
                 availableJumps = totalJumps;
             }
+
+            foreach(var c in colliders)
+            {
+                if(c.tag == "MovingPlatform")
+                {
+                    transform.parent = c.transform;
+                }
+            }
+        }
+        else
+        {
+            transform.parent=null;
         }
 
 
