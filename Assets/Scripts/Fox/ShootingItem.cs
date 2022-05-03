@@ -15,7 +15,7 @@ public class ShootingItem : MonoBehaviour
     {
         if (collision.tag == Constants.Fox)
             return;
-        if(collision.tag == Constants.Bullet)
+        if(collision.tag == Constants.Enemy)
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
