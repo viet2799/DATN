@@ -8,4 +8,6 @@ public class Constants
     public static readonly string Fox = "Player";
     public static readonly string Enemy = "Enemy";
     public static readonly string Bullet = "bullet";
+    public static readonly string King = "king";
+    public static readonly string Queen = "queen";
 }
