@@ -7,7 +7,11 @@ public class BloodBar : MonoBehaviour
 {
     public Image fillBar;
     public float health;
-
+    Animator animator;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     public void LoseHealth(int value)
     {
         health -= value;
@@ -16,6 +20,15 @@ public class BloodBar : MonoBehaviour
         {
             FindObjectOfType<movePlayer>().Die();
         }
+    }
+
+    public void UpHealth(int value)
+    {
+        if (health < 100)
+        {
+            health += value;
+        }
+        else return;
     }
 
     private void Update()

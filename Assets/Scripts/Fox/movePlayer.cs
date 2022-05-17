@@ -9,7 +9,7 @@ public class movePlayer : MonoBehaviour
     [SerializeField] private int totalJumps;
     int availableJumps;
 
-
+    [SerializeField] AudioSource jumpSoundEffect;
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] Transform overheadCheckCollider;
     
@@ -53,6 +53,7 @@ public class movePlayer : MonoBehaviour
         #region jump
         if (Input.GetButtonDown("Jump"))
         {
+            jumpSoundEffect.Play();
             Jump();
         }
         #endregion
@@ -180,13 +181,13 @@ public class movePlayer : MonoBehaviour
 
     public void Die()
     {
+        rb.bodyType = RigidbodyType2D.Static;
+        animator.SetTrigger("Death");
         isDead = true;
+        Invoke("RestartGame", 2.0f);
+    }
+    public void RestartGame()
+    {
         FindObjectOfType<LevelManager>().Restart();
     }
-
-    public void ResetPlayer()
-    {
-
-    }
-
 }

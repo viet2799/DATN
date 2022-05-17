@@ -5,13 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EnemyAl : MonoBehaviour
 { 
-    //Reference to waypoints
     public List<Transform> points;
-    //The int value for next point index
     public int nextID = 0;
-    //The value of that applies to ID for changing
     int idChangeValue = 1;
-    //Speed of movement or flying
     public float speed = 2;
 
 
@@ -70,5 +66,10 @@ public class EnemyAl : MonoBehaviour
                 idChangeValue = 1;
             nextID += idChangeValue;
         }
+    }
+
+    void Die()
+    {
+
     }
 }

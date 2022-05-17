@@ -37,7 +37,11 @@ public class MainMenuController : MonoBehaviour
     }
     public void BackToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
-        //Application.LoadLevel("Level03");
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

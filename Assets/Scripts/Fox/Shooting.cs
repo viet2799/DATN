@@ -6,12 +6,14 @@ public class Shooting : MonoBehaviour
 {
     public GameObject shootingItem;
     public Transform shootingPoint;
+    public AudioSource shootingSound;
     public bool canShoot = true;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetButtonDown("Shotting"))
         {
+            shootingSound.Play();
             Shoot();
         }
     }

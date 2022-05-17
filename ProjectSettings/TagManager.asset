@@ -9,6 +9,9 @@ TagManager:
   - Block
   - Enemy
   - bullet
+  - Cherry
+  - Gem
+  - House
   layers:
   - Default
   - TransparentFX
